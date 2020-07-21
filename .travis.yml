@@ -18,7 +18,7 @@ before_install:
   - docker build -t karkyra/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run -e CI=true karkyra/docker-react npm run test
+  - docker run karkyra/docker-react npm run test -- --coverage
 
 deploy:
   provider: script 
